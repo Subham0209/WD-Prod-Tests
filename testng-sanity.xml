@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Western-Digital-Tests">
+
+
+    <listeners>
+
+        <listener class-name="com.wdprod.qa.Listeners.TestListeners" />
+
+    </listeners>
+
+  <test name="Test">
+    <classes>
+
+     <!-- <class name="com.wdprod.qa.unit.testcases.B2C_Registration_Test"/>
+          <class name="com.wdprod.qa.unit.testcases.B2B_Registration_Test"/>
+          <class name="com.wdprod.qa.system.testcases.B2B_Checkout_Sanity_Test"/>
+        <class name="com.wdprod.qa.system.testcases.B2B_Checkout_Sanity_Test"/>-->
+        <class name="com.wdprod.qa.unit.testcases.B2C_Registration_Test"></class>
+
+</classes>
+</test> <!-- Test -->
+</suite> <!-- Western-Digital-Tests -->
