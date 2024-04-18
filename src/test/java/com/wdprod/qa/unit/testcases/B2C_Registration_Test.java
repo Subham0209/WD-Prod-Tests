@@ -87,7 +87,7 @@ public class B2C_Registration_Test extends TestBase {
         return arrayList;
     }
 
-    @BeforeClass
+    @BeforeMethod
     public void setUp(ITestContext context) throws IOException {
         initialization();
         storeRegistrationPage = new StoreRegistrationPage();
@@ -210,7 +210,7 @@ public class B2C_Registration_Test extends TestBase {
 
     }*/
 
-    @AfterClass
+    @AfterMethod
     public void tearDown() throws IOException
     {
         driver.quit();
