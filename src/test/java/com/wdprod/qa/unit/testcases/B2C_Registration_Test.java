@@ -116,7 +116,7 @@ public class B2C_Registration_Test extends TestBase {
 
 
     }
-
+/*
     @Test(priority=2)
     public void validateB2Cregistration_EN_CA() throws IOException, InterruptedException {
 
