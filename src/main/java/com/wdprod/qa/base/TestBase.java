@@ -5,6 +5,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestContext;
 
 public class TestBase{
@@ -13,7 +14,11 @@ public class TestBase{
 	public static void initialization() {
 
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\7344755\\Desktop\\Automation\\ChromeDriver\\chromedriver.exe");
-		driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("headless");
+		options.addArguments("window-size=1400,800");
+		options.addArguments("disable-gpu");
+		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 
