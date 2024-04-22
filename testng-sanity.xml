@@ -12,7 +12,7 @@
   <test name="Test">
     <classes>
 
-     <!-- <class name="com.wdprod.qa.unit.testcases.B2C_Registration_Test"/>
+     <!--TestChanges <class name="com.wdprod.qa.unit.testcases.B2C_Registration_Test"/>
           <class name="com.wdprod.qa.unit.testcases.B2B_Registration_Test"/>
           <class name="com.wdprod.qa.system.testcases.B2B_Checkout_Sanity_Test"/>
         <class name="com.wdprod.qa.system.testcases.B2B_Checkout_Sanity_Test"/>-->
