@@ -13,7 +13,7 @@ public class ExtentReporter {
     public static ExtentReports generateExtentReport()
     {
 
-        ExtentSparkReporter sparkReporter = new ExtentSparkReporter("C:\\Users\\7344755\\Desktop\\Automation\\Results\\Report.html");
+        ExtentSparkReporter sparkReporter = new ExtentSparkReporter("C:\\Users\\7344755\\Desktop\\Automation\\Report.html");
         sparkReporter.config().setTheme(Theme.DARK);
         sparkReporter.config().setReportName("Western Digital Automation Tests");
         sparkReporter.config().setDocumentTitle("Western-Digital Tests");

@@ -58,7 +58,7 @@ public class B2C_Checkout_Sanity_Test extends TestBase
     }
 
 
-/*
+
     @Test(priority=2)
     public void validateB2Ccheckout_EN_CA() throws IOException, InterruptedException {
 
@@ -101,7 +101,7 @@ public class B2C_Checkout_Sanity_Test extends TestBase
         homePage.ClearBrowserCache();
 
     }
-*/
+
     @Test(priority=3)
     public void validateB2Ccheckout_EN_GB() throws IOException, InterruptedException {
 
@@ -326,7 +326,7 @@ public class B2C_Checkout_Sanity_Test extends TestBase
 
     }
 
-/*
+
     @Test(priority=12)
     public void validateB2Ccheckout_FR_CA() throws IOException, InterruptedException {
 
@@ -371,7 +371,7 @@ public class B2C_Checkout_Sanity_Test extends TestBase
 
 
     }
-*/
+
     @Test(priority=12)
     public void validateB2Ccheckout_DE_AT() throws IOException, InterruptedException {
 
@@ -430,6 +430,7 @@ public class B2C_Checkout_Sanity_Test extends TestBase
         homePage.ClearBrowserCache();
         Thread.sleep(5000);
 }
+
 */
 
     @Test(priority=13)

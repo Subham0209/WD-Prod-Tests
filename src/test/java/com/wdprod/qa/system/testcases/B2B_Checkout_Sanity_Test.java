@@ -51,8 +51,8 @@ public class B2B_Checkout_Sanity_Test extends TestBase
 
         }
 
-
-    /*@Test(priority=2)
+/*
+    @Test(priority=2)
     public void validateB2Bcheckout_EN_CA() throws IOException, InterruptedException {
 
         //navigateToURL("https://www.westerndigital.com/en-ca/");

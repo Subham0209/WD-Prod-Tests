@@ -38,7 +38,7 @@ public class B2C_Registration_Test extends TestBase {
         Workbook workbook = null;
         List<String> arrayList = new ArrayList<>();
         try{
-            file = new FileInputStream("C:\\Users\\7344755\\Desktop\\Automation\\excel\\email_b2c.xlsx");
+            file = new FileInputStream("C:\\Users\\7344755\\Desktop\\Automation\\excel\\email_b2c1.xlsx");
             workbook = new XSSFWorkbook(file);
             Sheet sheet = workbook.getSheet("Sheet1");
 
@@ -73,7 +73,7 @@ public class B2C_Registration_Test extends TestBase {
             }
 
             // Save the modified Excel sheet
-            FileOutputStream outputStream = new FileOutputStream("C:\\Users\\7344755\\Desktop\\Automation\\excel\\email_b2c.xlsx");
+            FileOutputStream outputStream = new FileOutputStream("C:\\Users\\7344755\\Desktop\\Automation\\excel\\email_b2c1.xlsx");
             workbook.write(outputStream);
             outputStream.close();
         } finally {
@@ -116,7 +116,7 @@ public class B2C_Registration_Test extends TestBase {
 
 
     }
-/*
+
     @Test(priority=2)
     public void validateB2Cregistration_EN_CA() throws IOException, InterruptedException {
 
