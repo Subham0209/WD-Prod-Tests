@@ -16,7 +16,7 @@
           <class name="com.wdprod.qa.unit.testcases.B2B_Registration_Test"/>
           <class name="com.wdprod.qa.system.testcases.B2B_Checkout_Sanity_Test"/>
         <class name="com.wdprod.qa.system.testcases.B2B_Checkout_Sanity_Test"/>-->
-        <class name="com.wdprod.qa.unit.testcases.B2C_Registration_Test"></class>
+        <class name="com.wdprod.qa.system.testcases.B2B_Checkout_Sanity_Test"></class>
 
 </classes>
 </test> <!-- Test -->

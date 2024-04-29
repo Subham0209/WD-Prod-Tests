@@ -2,12 +2,13 @@ package com.wdprod.qa.system.testcases;
 
 import com.wdprod.qa.base.TestBase;
 import com.wdprod.qa.pages.HomePage;
-import com.wdprod.qa.pages.StoreRegistrationPage;
-import com.wdprod.qa.unit.testcases.AEM_B2B_Login_Test;
+import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.WebElement;
 import org.testng.ITestContext;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -44,11 +45,14 @@ public class B2B_Checkout_Sanity_Test extends TestBase
         Thread.sleep(10000);
         driver.get("https://www.westerndigital.com/store/business/checkout/multi/delivery-address/add");
         homePage.Checkout_Steps();
-       Thread.sleep(5000);
+        Thread.sleep(5000);
+        WebElement errorMessage = driver.findElement(By.xpath("//p[contains(@class, 'alert-danger')]//span[@class='pl-2']"));
+        String ActualTitle = errorMessage.getText().trim();
+        String ExpectedTitle = "Credit Card Authorization failed!";
+        Assert.assertEquals(ExpectedTitle, ActualTitle);
         navigateToURL("https://www.westerndigital.com/store/business/logout");
         Thread.sleep(10000);
         homePage.ClearBrowserCache();
-
         }
 
 /*
@@ -85,12 +89,12 @@ public class B2B_Checkout_Sanity_Test extends TestBase
     }
 */
     @Test(priority=2)
+
     public void validateB2Bcheckout_EN_GB() throws IOException, InterruptedException {
 
         navigateToURL("https://www.westerndigital.com/en-gb/");
-        Thread.sleep(5000);
+        //waitForPageLoaded(driver);
         //driver.findElement(By.xpath("//button[@id='truste-consent-close']")).click();
-        Thread.sleep(2000);
         homePage.B2BLogin();
         Thread.sleep(4000);
         driver.get("https://www.westerndigital.com/en-gb/products/internal-drives/wd-red-pro-sata-hdd#WD2002FFSX");
@@ -100,6 +104,10 @@ public class B2B_Checkout_Sanity_Test extends TestBase
         driver.get("https://www.westerndigital.com/en-gb/store/business/checkout/multi/delivery-address/add");
         homePage.Checkout_Steps();
         Thread.sleep(5000);
+        WebElement errorMessage = driver.findElement(By.xpath("//p[contains(@class, 'alert-danger')]//span[@class='pl-2']"));
+        String ActualTitle = errorMessage.getText().trim();
+        String ExpectedTitle = "Credit Card Authorization failed!";
+        Assert.assertEquals(ExpectedTitle, ActualTitle);
         navigateToURL("https://www.westerndigital.com/en-gb/store/business/logout");
         Thread.sleep(10000);
         homePage.ClearBrowserCache();
@@ -123,6 +131,10 @@ public class B2B_Checkout_Sanity_Test extends TestBase
         driver.get("https://www.westerndigital.com/en-se/store/business/checkout/multi/delivery-address/add");
         homePage.Checkout_Steps();
         Thread.sleep(5000);
+        WebElement errorMessage = driver.findElement(By.xpath("//p[contains(@class, 'alert-danger')]//span[@class='pl-2']"));
+        String ActualTitle = errorMessage.getText().trim();
+        String ExpectedTitle = "Credit Card Authorization failed!";
+        Assert.assertEquals(ExpectedTitle, ActualTitle);
         navigateToURL("https://www.westerndigital.com/en-se/store/business/logout");
         Thread.sleep(10000);
         homePage.ClearBrowserCache();
@@ -144,6 +156,10 @@ public class B2B_Checkout_Sanity_Test extends TestBase
         driver.get("https://www.westerndigital.com/en-ie/store/business/checkout/multi/delivery-address/add");
         homePage.Checkout_Steps();
         Thread.sleep(5000);
+        WebElement errorMessage = driver.findElement(By.xpath("//p[contains(@class, 'alert-danger')]//span[@class='pl-2']"));
+        String ActualTitle = errorMessage.getText().trim();
+        String ExpectedTitle = "Credit Card Authorization failed!";
+        Assert.assertEquals(ExpectedTitle, ActualTitle);
         navigateToURL("https://www.westerndigital.com/en-ie/store/business/logout");
         Thread.sleep(10000);
         homePage.ClearBrowserCache();
@@ -165,6 +181,10 @@ public class B2B_Checkout_Sanity_Test extends TestBase
         driver.get("https://www.westerndigital.com/fr-fr/store/business/checkout/multi/delivery-address/add");
         homePage.Checkout_Steps();
         Thread.sleep(5000);
+        WebElement errorMessage = driver.findElement(By.xpath("//p[contains(@class, 'alert-danger')]//span[@class='pl-2']"));
+        String ActualTitle = errorMessage.getText().trim();
+        String ExpectedTitle = "Carte de crédit non reconnue !!!";
+        Assert.assertEquals(ExpectedTitle, ActualTitle);
         navigateToURL("https://www.westerndigital.com/fr-fr/store/business/logout");
         Thread.sleep(10000);
         homePage.ClearBrowserCache();
@@ -188,6 +208,10 @@ public class B2B_Checkout_Sanity_Test extends TestBase
         driver.get("https://www.westerndigital.com/de-de/store/business/checkout/multi/delivery-address/add");
         homePage.Checkout_Steps();
         Thread.sleep(5000);
+        WebElement errorMessage = driver.findElement(By.xpath("//p[contains(@class, 'alert-danger')]//span[@class='pl-2']"));
+        String ActualTitle = errorMessage.getText().trim();
+        String ExpectedTitle = "Kreditkarte konnte nicht autorisiert werden!";
+        Assert.assertEquals(ExpectedTitle, ActualTitle);
         navigateToURL("https://www.westerndigital.com/de-de/store/business/logout");
         Thread.sleep(10000);
         homePage.ClearBrowserCache();
@@ -210,6 +234,10 @@ public class B2B_Checkout_Sanity_Test extends TestBase
         driver.get("https://www.westerndigital.com/pl-pl/store/business/checkout/multi/delivery-address/add");
         homePage.Checkout_Steps();
         Thread.sleep(5000);
+        WebElement errorMessage = driver.findElement(By.xpath("//p[contains(@class, 'alert-danger')]//span[@class='pl-2']"));
+        String ActualTitle = errorMessage.getText().trim();
+        String ExpectedTitle = "Błąd autoryzacji karty kredytowej!!!";
+        Assert.assertEquals(ExpectedTitle, ActualTitle);
         navigateToURL("https://www.westerndigital.com/pl-pl/store/business/logout");
         Thread.sleep(10000);
         homePage.ClearBrowserCache();
@@ -232,6 +260,10 @@ public class B2B_Checkout_Sanity_Test extends TestBase
         driver.get("https://www.westerndigital.com/nl-nl/store/business/checkout/multi/delivery-address/add");
         homePage.Checkout_Steps();
         Thread.sleep(5000);
+        WebElement errorMessage = driver.findElement(By.xpath("//p[contains(@class, 'alert-danger')]//span[@class='pl-2']"));
+        String ActualTitle = errorMessage.getText().trim();
+        String ExpectedTitle = "Creditcardautorisatie mislukt!";
+        Assert.assertEquals(ExpectedTitle, ActualTitle);
         navigateToURL("https://www.westerndigital.com/nl-nl/store/business/logout");
         Thread.sleep(10000);
         homePage.ClearBrowserCache();
@@ -254,6 +286,10 @@ public class B2B_Checkout_Sanity_Test extends TestBase
         driver.get("https://www.westerndigital.com/el-gr/store/business/checkout/multi/delivery-address/add");
         homePage.Checkout_Steps();
         Thread.sleep(5000);
+        WebElement errorMessage = driver.findElement(By.xpath("//p[contains(@class, 'alert-danger')]//span[@class='pl-2']"));
+        String ActualTitle = errorMessage.getText().trim();
+        String ExpectedTitle = "Η εξουσιοδότηση της πιστωτικής κάρτας απέτυχε!!!";
+        Assert.assertEquals(ExpectedTitle, ActualTitle);
         navigateToURL("https://www.westerndigital.com/el-gr/store/business/logout");
         Thread.sleep(10000);
         homePage.ClearBrowserCache();
@@ -276,6 +312,10 @@ public class B2B_Checkout_Sanity_Test extends TestBase
         driver.get("https://www.westerndigital.com/cs-cz/store/business/checkout/multi/delivery-address/add");
         homePage.Checkout_Steps();
         Thread.sleep(5000);
+        WebElement errorMessage = driver.findElement(By.xpath("//p[contains(@class, 'alert-danger')]//span[@class='pl-2']"));
+        String ActualTitle = errorMessage.getText().trim();
+        String ExpectedTitle = "Autorizace kreditní karty se nezdařila!";
+        Assert.assertEquals(ExpectedTitle, ActualTitle);
         navigateToURL("https://www.westerndigital.com/cs-cz/store/business/logout");
         Thread.sleep(10000);
         homePage.ClearBrowserCache();
@@ -336,6 +376,10 @@ public class B2B_Checkout_Sanity_Test extends TestBase
         driver.get("https://www.westerndigital.com/de-at/store/business/checkout/multi/delivery-address/add");
         homePage.Checkout_Steps();
         Thread.sleep(5000);
+        WebElement errorMessage = driver.findElement(By.xpath("//p[contains(@class, 'alert-danger')]//span[@class='pl-2']"));
+        String ActualTitle = errorMessage.getText().trim();
+        String ExpectedTitle = "Kreditkarte konnte nicht autorisiert werden!";
+        Assert.assertEquals(ExpectedTitle, ActualTitle);
         navigateToURL("https://www.westerndigital.com/de-at/store/business/logout");
         Thread.sleep(10000);
         homePage.ClearBrowserCache();
@@ -359,7 +403,38 @@ public class B2B_Checkout_Sanity_Test extends TestBase
         driver.get("https://www.westerndigital.com/es-es/store/business/checkout/multi/delivery-address/add");
         homePage.Checkout_Steps();
         Thread.sleep(5000);
+        WebElement errorMessage = driver.findElement(By.xpath("//p[contains(@class, 'alert-danger')]//span[@class='pl-2']"));
+        String ActualTitle = errorMessage.getText().trim();
+        String ExpectedTitle = "¡Error de autorización de tarjeta de crédito!";
+        Assert.assertEquals(ExpectedTitle, ActualTitle);
         navigateToURL("https://www.westerndigital.com/es-es/store/business/logout");
+        Thread.sleep(10000);
+        homePage.ClearBrowserCache();
+
+
+    }
+
+    @Test(priority=12)
+    public void validateB2Bcheckout_IT_IT() throws IOException, InterruptedException {
+
+        navigateToURL("https://www.westerndigital.com/it-it/");
+        Thread.sleep(5000);
+        //   driver.findElement(By.xpath("//button[@id='truste-consent-close']")).click();
+        Thread.sleep(2000);
+        homePage.B2BLogin();
+        Thread.sleep(4000);
+        driver.get("https://www.westerndigital.com/it-it/products/internal-drives/wd-red-pro-sata-hdd#WD2002FFSX");
+        Thread.sleep(2000);
+        driver.findElement(By.className("addToCartBtn")).click();
+        Thread.sleep(2000);
+        driver.get("https://www.westerndigital.com/it-it/store/business/checkout/multi/delivery-address/add");
+        homePage.Checkout_Steps();
+        Thread.sleep(5000);
+        WebElement errorMessage = driver.findElement(By.xpath("//p[contains(@class, 'alert-danger')]//span[@class='pl-2']"));
+        String ActualTitle = errorMessage.getText().trim();
+        String ExpectedTitle = "Autorizzazione carta di credito non riuscita.";
+        Assert.assertEquals(ExpectedTitle, ActualTitle);
+        navigateToURL("https://www.westerndigital.com/it-it/store/business/logout");
         Thread.sleep(10000);
         homePage.ClearBrowserCache();
 

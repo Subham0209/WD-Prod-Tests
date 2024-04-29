@@ -6,6 +6,8 @@ import java.time.Duration;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
 
 public class TestBase{
@@ -15,9 +17,10 @@ public class TestBase{
 
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\7344755\\Desktop\\Automation\\ChromeDriver\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("headless");
+		/*options.addArguments("headless");*/
 		options.addArguments("window-size=1400,800");
 		options.addArguments("disable-gpu");
+		options.setPageLoadStrategy(PageLoadStrategy.EAGER);
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
@@ -42,5 +45,15 @@ public class TestBase{
 		driver.manage().deleteAllCookies();
 	}
 
+	public static void waitForPageLoaded(WebDriver driver) {
+		ExpectedCondition<Boolean> pageLoadCondition = new
+				ExpectedCondition<Boolean>() {
+					public Boolean apply(WebDriver driver) {
+						return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
+					}
+				};
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
+		wait.until(pageLoadCondition);
+	}
 
 }
